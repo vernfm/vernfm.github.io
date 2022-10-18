@@ -169,3 +169,68 @@ h1 {
   color: var(--white-color);
   border-radius: 20px;
 }
+
+.latestRelease {
+  position: absolute;
+  margin-top: 160px;
+  background-color: var(--darkest-color);
+  color: var(--white-color);
+  height: 160px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.albumImage {
+  width: 80px;
+  height: 80px;
+}
+
+.albumDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.listenRelease {
+  padding-left: 60px;
+}
+
+.albumName {
+  padding-top: 5px;
+}
+
+.leftRelease {
+  padding-left: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rightRelease {
+  padding-right: 60px;
+}
+
+@media screen and (max-width: 785px) {
+  .latestRelease {
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 80px;
+  }
+  .leftRelease {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-left: -50px;
+  }
+  .rightRelease {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 260px;
+    margin-right: -80px;
+  }
+}
