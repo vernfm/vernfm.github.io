@@ -7,8 +7,13 @@
   --purple-color: #6d61f3;
   --white-color: #ffffff;
 
-  --logo-weight: 500;
-  --standard-weight: 400;
+  --medium-weight: 500;
+  --regular-weight: 400;
+
+  --font-size-16: 16px;
+  --font-size-24: 24px;
+  --font-size-36: 36px;
+  --font-size-09rem: 0.9rem;
 }
 
 * {
@@ -43,7 +48,7 @@ header {
 
 .headerlogo {
   color: var(--white-color);
-  font-weight: var(--logo-weight);
+  font-weight: var(--medium-weight);
 }
 
 .nav-list {
@@ -58,8 +63,8 @@ header {
 .nav-link {
   padding: 10px;
   color: var(--white-color);
-  font-size: 0.9rem;
-  font-weight: var(--standard-weight);
+  font-size: var(--font-size-09rem);
+  font-weight: var(--regular-weight);
   border-radius: 5px;
 }
 
@@ -79,7 +84,7 @@ header {
     padding: 0 28px;
   }
   .logo a {
-    font-size: 0.9rem;
+    font-size: var(--font-size-09rem);
   }
   .logo img {
     width: 30px;
@@ -87,14 +92,14 @@ header {
   .header-toggle {
     display: inline;
     color: var(--white-color);
-    font-size: 24px;
+    font-size: var(--font-size-24);
     cursor: pointer;
   }
   .header-close {
     position: absolute;
     right: 24px;
     display: block;
-    font-size: 24px;
+    font-size: var(--font-size-24);
     border-radius: 50px;
     cursor: pointer;
   }
@@ -118,7 +123,7 @@ header {
   .nav-list {
     display: flex;
     flex-direction: column;
-    font-weight: 600;
+    font-weight: var(--medium-weight);
   }
   .nav-item {
     margin: 2rem 0;
@@ -135,12 +140,12 @@ header {
 
 h2 {
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: var(--font-size-16);
   color: var(--purple-color);
 }
 
 h1 {
-  font-size: 36px;
+  font-size: var(--font-size-36);
   color: var(--light-purple-color);
 }
 
@@ -151,13 +156,12 @@ h1 {
 
 h2,
 h1 {
-  font-weight: var(--standard-weight);
+  font-weight: var(--regular-weight);
 }
 
 .btnBackground {
   display: flex;
   justify-content: center;
-
   padding-top: 40px;
 }
 
@@ -185,11 +189,13 @@ h1 {
 .albumImage {
   width: 80px;
   height: 80px;
+  border-radius: 5%;
 }
 
 .albumDiv {
   display: flex;
   flex-direction: column;
+  justify-content: left;
 }
 
 .listenRelease {
@@ -198,6 +204,7 @@ h1 {
 
 .albumName {
   padding-top: 5px;
+  margin-left: -10px;
 }
 
 .leftRelease {
