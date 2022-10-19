@@ -245,31 +245,52 @@ h1 {
 }
 
 .about {
-  padding-top: 150px;
-  padding-left: 80px;
-  position: relative;
   height: 50vh;
+  align-items: center;
+  display: flex;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+
+@media screen and (max-width: 1050px) {
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 40px;
+    margin-bottom: 100px;
+    padding-left: 5vw;
+    padding-right: 12vw;
+    height: auto;
+  }
+  .rightAboutIMG {
+    margin-left: -15vw;
+    padding-bottom: 20px;
+  }
+  .aboutIMG {
+    height: 80vh;
+  }
 }
 
 .leftText {
-  float: left;
-  width: 50%;
   color: var(--darkest-color);
   background-color: var(--light-purple-color);
   padding: 20px;
-  position: relative;
+  overflow: hidden;
   border-radius: 1%;
 }
 
+.leftHeaderText {
+  padding-bottom: 20px;
+  font-weight: var(--medium-weight);
+}
+
 .rightAboutIMG {
-  float: right;
   width: 40vw;
   padding-left: 60px;
 }
 
 .aboutIMG {
   height: 25vh;
-
   border-radius: 1%;
 }
 
@@ -313,6 +334,26 @@ div.img {
   margin-left: -30px;
 }
 
+@media screen and (max-width: 1050px) {
+  .imgGroup {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 100px;
+    position: relative;
+  }
+  div.img {
+    height: auto;
+    padding-top: 50px;
+  }
+  .socialBTN {
+    margin-left: 0px;
+  }
+  .socialsSection {
+    margin-left: -30px;
+  }
+}
+
 footer {
   background-color: var(--purple-color);
   color: var(--white-color);
@@ -322,7 +363,8 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-evenly;
+  position: relative;
+  justify-content: center;
 }
 
 .left {
@@ -350,4 +392,43 @@ footer {
 
 .footerLink {
   color: var(--white-color);
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    height: fit-content;
+    padding-top: 100px;
+  }
+  .footerLogo {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    justify-content: center;
+  }
+  .row1,
+  .row2,
+  .row3 {
+    padding-top: 50px;
+  }
+  .logo img {
+    margin-right: 0;
+  }
+  .navMargin {
+    margin-right: 10px !important;
+  }
+  .left {
+    margin-left: 0px;
+  }
+  .rightAboutIMG {
+    margin-left: 0;
+  }
 }
