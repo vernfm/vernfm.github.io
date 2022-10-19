@@ -255,6 +255,7 @@ h1 {
   background-color: var(--light-purple-color);
   padding: 20px;
   position: relative;
+  border-radius: 1%;
 }
 
 .rightAboutIMG {
@@ -266,6 +267,8 @@ h1 {
 .aboutIMG {
   width: 50%;
   height: 50%;
+
+  border-radius: 1%;
 }
 
 div.img {
@@ -307,22 +310,6 @@ div.img {
 
 .socialBTN {
   margin-left: -30px;
-}
-
-.youtubeIMG {
-  padding-top: 23px;
-}
-
-.twitterIMG {
-  padding-top: 23px;
-}
-
-.twitterTitle {
-  padding-top: calc(26px + 60px);
-}
-
-.youtubeTitle {
-  padding-top: calc(47px + 60px);
 }
 
 footer {
