@@ -248,6 +248,7 @@ h1 {
   padding-top: 150px;
   padding-left: 80px;
   position: relative;
+  height: 50vh;
 }
 
 .leftText {
@@ -267,8 +268,7 @@ h1 {
 }
 
 .aboutIMG {
-  width: 75%;
-  height: 75%;
+  height: 25vh;
 
   border-radius: 1%;
 }
@@ -279,7 +279,6 @@ div.img {
 }
 .socialsSection {
   position: relative;
-  padding-top: 500px;
   color: var(--white-color);
 }
 
