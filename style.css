@@ -329,6 +329,7 @@ div.img {
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
+  font-weight: var(--medium-weight);
 }
 
 .landingBTN {
@@ -356,6 +357,9 @@ div.img {
   }
   .socialsSection {
     margin-left: -30px;
+  }
+  .latestSubs {
+    margin-top: -400px;
   }
 }
 
@@ -443,7 +447,7 @@ footer {
   flex-direction: column;
 }
 .subInfo {
-  margin-top: 400px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
   color: var(--white-color);
@@ -500,4 +504,11 @@ footer {
 .benefitsBTN,
 .benefitsBTN1 {
   margin-left: 0px;
+}
+.subSectionTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 500px;
+  color: var(--white-color);
+  font-weight: var(--medium-weight);
 }
