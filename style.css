@@ -437,3 +437,21 @@ footer {
     margin-left: 0;
   }
 }
+
+.latestSubs {
+  display: flex;
+  flex-direction: column;
+}
+.subInfo {
+  margin-top: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--white-color);
+}
+.buttonsSubs {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
