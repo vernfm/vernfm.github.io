@@ -250,6 +250,7 @@ h1 {
   display: flex;
   padding-left: 15vw;
   padding-right: 15vw;
+  width: 100%;
 }
 
 @media screen and (max-width: 1050px) {
@@ -258,13 +259,17 @@ h1 {
     flex-direction: column-reverse;
     padding-top: 40px;
     margin-bottom: 100px;
-    padding-left: 5vw;
-    padding-right: 12vw;
+    padding-left: 15vw;
+    margin-right: 5vw;
     height: auto;
   }
   .rightAboutIMG {
-    margin-left: -15vw;
+    justify-content: center;
+    display: flex;
     padding-bottom: 20px;
+  }
+  div.rightAboutIMG {
+    padding-left: 0;
   }
   .aboutIMG {
     height: 80vh;
