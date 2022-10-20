@@ -271,6 +271,9 @@ h1 {
   div.rightAboutIMG {
     padding-left: 0;
   }
+  .footerLogo a {
+    font-size: var(--font-size-16);
+  }
   .aboutIMG {
     height: 80vh;
   }
@@ -329,6 +332,7 @@ div.img {
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
+  font-weight: var(--medium-weight);
 }
 
 .landingBTN {
@@ -356,6 +360,9 @@ div.img {
   }
   .socialsSection {
     margin-left: -30px;
+  }
+  .latestSubs {
+    margin-top: -400px;
   }
 }
 
@@ -427,6 +434,10 @@ footer {
   .logo img {
     margin-right: 0;
   }
+  img.footerIMG {
+    width: 50px;
+    height: 50px;
+  }
   .navMargin {
     margin-right: 10px !important;
   }
@@ -443,7 +454,7 @@ footer {
   flex-direction: column;
 }
 .subInfo {
-  margin-top: 400px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
   color: var(--white-color);
@@ -500,4 +511,11 @@ footer {
 .benefitsBTN,
 .benefitsBTN1 {
   margin-left: 0px;
+}
+.subSectionTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 500px;
+  color: var(--white-color);
+  font-weight: var(--medium-weight);
 }
