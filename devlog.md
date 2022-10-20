@@ -7,3 +7,8 @@
 - Fixed some SEO, added socials tab and about tab, added footer.
   **1. New elements are not responsive!**
   **2. Awaiting further design elements**
+
+> 2022/10/20
+
+- Centered footer, fixed styling, added responsiveness, prepared for twitch sub api.
+  **1. Twitch api not included!**
