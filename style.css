@@ -133,6 +133,11 @@ header {
   .show {
     right: 0;
   }
+
+  .buttonsSubs {
+    flex-direction: column;
+    display: flex;
+  }
 }
 
 .landingHeader {
@@ -447,6 +452,26 @@ footer {
   .rightAboutIMG {
     margin-left: 0;
   }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .buttonsSubs {
+    flex-direction: column;
+  }
+  .useMusic {
+    margin-bottom: 400px;
+  }
+  .rightMusic {
+    margin-right: -60px;
+  }
+  .useMusicBTNs {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .useMusicBTN {
+    margin-bottom: 0;
+  }
 }
 
 .latestSubs {
@@ -463,7 +488,7 @@ footer {
 .buttonsSubs {
   padding-top: 50px;
   display: flex;
-  flex-direction: row;
+  flex-direction: auto;
   justify-content: center;
   gap: 50px;
 }
@@ -543,7 +568,6 @@ footer {
 .twitchStream {
   display: flex;
   justify-content: center;
-  padding-bottom: 200px;
 }
 
 .para {

@@ -10,5 +10,5 @@
 
 > 2022/10/20
 
-- Centered footer, fixed styling, added responsiveness, prepared for twitch sub api.
-  **1. Twitch api not included!**
+- Centered footer, fixed styling, added responsiveness, added subscription section, added twitch embed.
+  **1. Use our music is not responsive!**
