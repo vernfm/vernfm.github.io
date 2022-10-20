@@ -469,3 +469,33 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
+.subIMG {
+  width: 180px;
+}
+
+.subTitle {
+  font-weight: var(--medium-weight);
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1220px) {
+  .subInfo {
+    flex-direction: column;
+  }
+  .buttonsSubs {
+    justify-content: center;
+
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .subInfo {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+.benefitsBTN,
+.benefitsBTN1 {
+  margin-left: 0px;
+}
