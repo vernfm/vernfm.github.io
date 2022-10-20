@@ -310,7 +310,7 @@ div.img {
 
 .imgGroup {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-left: 160px;
   padding-right: 160px;
 }
@@ -485,7 +485,6 @@ footer {
   }
   .buttonsSubs {
     justify-content: center;
-
     gap: 50px;
   }
 }
@@ -493,6 +492,9 @@ footer {
   .subInfo {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .subIMG {
+    padding-top: 80px;
   }
 }
 .benefitsBTN,
