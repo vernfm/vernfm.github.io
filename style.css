@@ -540,7 +540,7 @@ footer {
 .subSectionTitle {
   display: flex;
   justify-content: center;
-  margin-top: 0px;
+  margin-top: 400px;
   color: var(--white-color);
   font-weight: var(--medium-weight);
 }
@@ -568,23 +568,6 @@ footer {
 .twitchStream {
   display: flex;
   justify-content: center;
-}
-
-.para {
-  height: -50vh;
-}
-
-div.leftText.para {
-  height: 0;
-}
-
-.useMusic {
-  height: 50vh;
-  align-items: center;
-  display: flex;
-  padding-left: 15vw;
-  padding-right: 15vw;
-  width: 100%;
 }
 
 .buttonsSubs {
