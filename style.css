@@ -1,19 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
-
 :root {
   --background-color: #18172b;
   --border-color: #6d61f3;
   --white-color: #ffffff;
   --accent-color: #c88bff;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Urbanist', sans-serif;
 }
-
 body {
   background-color: var(--background-color);
   color: var(--white-color);
@@ -22,16 +19,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 h1 {
   z-index: 2;
 }
-
 .thanks {
   margin-top: 10px;
   z-index: 2;
 }
-
 #playingSong {
   position: absolute;
   top: 130px;
@@ -39,13 +33,11 @@ h1 {
   font-size: 36px;
   z-index: 3;
 }
-
 .video {
   display: flex;
   justify-content: left;
   z-index: 2;
 }
-
 #myVideo {
   margin-top: 30px;
   max-width: 95vw;
@@ -53,51 +45,28 @@ h1 {
   border-radius: 1%;
   outline: var(--border-color);
 }
-
 #container {
-  left: 0px;
+  left: 0;
   top: -100px;
-  height: calc(100vh + 100px);
+  height: calc(100vh+100px);
   overflow: hidden;
   position: relative;
 }
-
 #animate {
   margin: 0 auto;
   width: 20px;
   overflow: visible;
   position: relative;
 }
-
 #all {
   overflow: hidden;
   height: 100vh;
   width: 100%;
   position: fixed;
 }
-
 #myAudio {
   margin-top: 150px;
 }
-
-@media only screen and (max-width: 1200px) {
-  #playingSong {
-    font-size: 24px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  #playingSong {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  #playingSong {
-    font-size: 12px;
-  }
-}
-
 .header {
   display: flex;
   flex-direction: row;
@@ -106,7 +75,6 @@ h1 {
   margin-top: 20px;
   z-index: 2;
 }
-
 #myButton {
   background-color: var(--accent-color);
   color: var(--white-color);
@@ -119,21 +87,29 @@ h1 {
   align-items: center;
   border-radius: 10px;
 }
-
 #myButton:hover {
   background-color: var(--white-color);
   color: var(--accent-color);
   transition: 0.3s;
 }
 
-@media only screen and (max-width: 929px) {
+@media only screen and (max-width: 405px) {
   #playingSong {
-    margin-top: 36px;
+    margin-top: 12px;
   }
 }
-
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 1200px) {
   #playingSong {
-    margin-top: 72px;
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #playingSong {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  #playingSong {
+    font-size: 12px;
   }
 }

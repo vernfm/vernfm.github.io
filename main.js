@@ -1,3 +1,4 @@
+// ---------------------- Audio Button -------------------------- \\
 var pause = false;
 
 document.getElementById('myButton').addEventListener('click', function () {
