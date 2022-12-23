@@ -1,4 +1,4 @@
-# vernfm
+# VernFM
 
 VernFM website
 
@@ -10,6 +10,3 @@ link: vernfm.github.io
 - CSS
 - JS
 - Git & Github pages
-
-- Twitch API
-  https://dev.twitch.tv/console
