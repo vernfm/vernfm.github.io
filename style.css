@@ -74,6 +74,7 @@ h1 {
   justify-content: center;
   margin-top: 20px;
   z-index: 2;
+  max-width: 85vw;
 }
 #myButton {
   background-color: var(--accent-color);
@@ -111,5 +112,29 @@ h1 {
 @media only screen and (max-width: 575px) {
   #playingSong {
     font-size: 12px;
+  }
+}
+@media only screen and (max-width: 472px) {
+  #playingSong {
+    margin-top: 70px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #myButton {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  @media only screen and (max-width: 310px) {
+    #playingSong {
+      margin-top: 70px;
+    }
   }
 }
