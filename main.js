@@ -105,8 +105,8 @@ player.src = './media/songs/' + currentSong[song] + '.wav';
 // Set the current time to start playing at a certain part
 player.currentTime = local;
 
-// Set the volume to 2%
-player.volume = 0.8;
+// Set the volume to 50%
+player.volume = 0.5;
 
 // Play the audio
 player.play();
