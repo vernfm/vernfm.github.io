@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: README.md
-Disallow: devlog.md
-Disallow: media\background.mp4
+Disallow: /README.md
+Disallow: /media/background.mp4
