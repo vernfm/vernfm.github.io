@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Urbanist', sans-serif;
+  text-decoration: none;
 }
 body {
   background-color: var(--background-color);
@@ -102,24 +103,31 @@ h1 {
   transition: 0.3s;
 }
 
+#patreon {
+  color: var(--accent-color);
+}
+
 @media only screen and (max-width: 1200px) {
   #playingSong {
     font-size: 24px;
+    margin-top: 14px;
   }
 }
 @media only screen and (max-width: 750px) {
   #playingSong {
     font-size: 18px;
+    margin-top: 14px;
   }
 }
 @media only screen and (max-width: 575px) {
   #playingSong {
     font-size: 12px;
+    margin-top: 14px;
   }
 }
 @media only screen and (max-width: 500px) {
   #playingSong {
-    margin-top: 80px;
+    margin-top: 100px;
   }
   .header {
     display: flex;

@@ -3,6 +3,7 @@
 VernFM website
 
 link: vernfm.github.io
+patreon link: patreon.com/vernfm
 
 ## Technologies
 
@@ -10,3 +11,4 @@ link: vernfm.github.io
 - CSS
 - JS
 - Git & Github pages
+- patreon
