@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: README.md
-Disallow: devlog.md
-Disallow: media\latestReleaseTrailer.wav
