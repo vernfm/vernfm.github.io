@@ -13,3 +13,5 @@ patreon link: patreon.com/vernfm
 - Git & Github pages
 - Patreon
 - Robots.txt
+
+#### Maybe use ezoic for ads?

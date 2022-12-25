@@ -112,7 +112,9 @@ var currentSong = [
 var song = Math.floor(Math.random() * currentSong.length);
 
 playing.innerHTML = 'Current song: ' + currentSong[song];
-console.log('./media/songs/' + currentSong[song] + '.wav');
+console.log(
+  'The first song is: ' + './media/songs/' + currentSong[song] + '.wav'
+);
 
 // Get the audio element
 var player = document.getElementById('myAudio');
@@ -132,21 +134,27 @@ volumeSlider.addEventListener('input', function () {
   const range = volumeSlider.value;
   // Set the volume to the value of the range.
   player.volume = range * 0.01;
-  console.log(range);
+  console.log('The input range is now: ' + range);
 });
 
-// Set an interval to increment the current time by 1 second every 1000 milliseconds (1 second)
-var interval = setInterval(function () {
-  // Increment the current time by 1 second
-  local += 1;
-  player.currentTime = local;
-  // If the current time is greater than or equal to the duration of the audio, stop the interval and change the src to the next song
-  if (player.currentTime >= player.duration) {
-    local = 0;
-    clearInterval(interval);
-    player.src = './media/songs/' + currentSong[song] + '.wav';
-    playing = currentSong[song];
-    player.play();
-    song = Math.floor(Math.random() * currentSong.length);
+// ---------------------- Play next song -------------------------- \\
+
+// Set the current song index to 0
+var currentSongIndex = 0;
+
+// Set up the ended event listener for the audio element
+player.addEventListener('ended', function () {
+  // Increment the current song index
+  currentSongIndex++;
+
+  // If the current song index is greater than the number of songs, reset it to 0
+  if (currentSongIndex >= currentSong.length) {
+    currentSongIndex = 0;
   }
-}, 1000);
+
+  player.src = './media/songs/' + currentSong[song] + '.wav';
+  playing = currentSong[song];
+  player.play();
+  song = Math.floor(Math.random() * currentSong.length);
+  console.log('New song: ' + './media/songs/' + currentSong[song] + '.wav');
+});
