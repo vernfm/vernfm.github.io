@@ -17,7 +17,7 @@
       name="description"
       content="Welcome to VernFM, your go-to for lofi radio. Tune in 24/7 for the best lofi beats, plus downtempo, chillhop, and ambient music. Great for working, studying, or setting the mood. Relax and enjoy the ultimate lofi listening experience."
     />
-    <title>VernFM | Canary</title>
+    <title>VernFM: Lofi Radio | 24/7 Live Stream</title>
 
     <link rel="stylesheet" href="style.css" />
     <!-- Ezoic Code -->
@@ -29,7 +29,7 @@
     <!-- Google analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-FKSCKSG4V7"
+      src="https://www.googletagmanager.com/gtag/js?id=G-HGTHGJVM6X"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -38,42 +38,64 @@
       }
       gtag('js', new Date());
 
-      gtag('config', 'G-FKSCKSG4V7');
+      gtag('config', 'G-HGTHGJVM6X');
     </script>
     <!-- Google analytics -->
+    <!-- Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/7799275d96.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font awesome -->
   </head>
   <body>
-    <div class="header">
-      <div class="text">
+    <div class="navBar">
+      <div class="headerText">
         <h1>VernFM</h1>
-        <div class="thanks">
-          Thanks for chosing VernFM.
-          <a id="patreon" target="_blank" href="https://www.patreon.com/vernfm"
-            >Get more benefits!</a
-          >
-        </div>
-        <span id="version">alpha version - 0.0.4</span>
+        <span class="version">Alpha version: 0.0.4</span>
       </div>
-      <a id="myButton">Play Music</a>
-    </div>
-    <div class="video">
-      <video id="myVideo" autoplay loop>
-        <source src="./media/background.mp4" type="audio/mp4" />
-        Your browser does not support the audio element.
-      </video>
-      <h2 id="playingSong">Song :)</h2>
-    </div>
-    <div id="all">
-      <div id="container">
-        <div id="animate"></div>
+      <div class="audioControls">
+        <div id="myButton" class="navButton resumeButton">
+          <i class="fa-solid fa-play navIcon"></i>
+          <span>Resume</span>
+        </div>
+        <div class="navButton volumeSlider">
+          <span class="volumeText">Volume</span>
+          <input type="range" id="volumeSlider" min="1" max="100" value="75" />
+        </div>
+        <div id="muteButton" class="navButton muteButton">
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+      </div>
+      <div class="feedbackButton">
+        <a href="mailto:pontus@vernfm.com" class="feedbackClick">
+          <i class="fa-solid fa-comment navIcon"></i>Feedback
+        </a>
       </div>
     </div>
 
-    <audio
-      src="./media/songs/Song1Album1 (Hymn of love).wav"
-      type="audio/mp3"
-      id="myAudio"
-    ></audio>
+    <section class="main">
+      <div class="video">
+        <div class="sideAD">Do you want to advertise here?</div>
+        <video id="myVideo" autoplay loop>
+          <source src="./media/background.mp4" type="audio/mp4" />
+          Your browser does not support the audio element.
+        </video>
+
+        <div class="text-content">
+          <h2 id="playingSong">Current song: Wayne's World</h2>
+        </div>
+        <div class="sideAD">Do you want to advertise here?</div>
+      </div>
+
+      <div class="bottomAD">Do you want to advertise here?</div>
+
+      <audio
+        src="./media/songs/Song1Album1 (Hymn of love).wav"
+        type="audio/mp3"
+        id="myAudio"
+      ></audio>
+    </section>
     <script src="main.js"></script>
   </body>
 </html>

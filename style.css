@@ -1,155 +1,267 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
-:root {
-  --background-color: #18172b;
-  --border-color: #6d61f3;
-  --white-color: #ffffff;
-  --accent-color: #c88bff;
-  --version-color: #5d59a6;
-}
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Urbanist', sans-serif;
+  box-sizing: border-box;
   text-decoration: none;
+  font-family: 'Urbanist', sans-serif;
 }
+
+:root {
+  --dark-gray: #141529;
+  --gray: #1b203a;
+  --light-gray: #242841;
+  --purple: #4462ec;
+  --pink: #ff6e91;
+  --orange: #f09755;
+  --white: #ffffff;
+}
+
 body {
-  background-color: var(--background-color);
-  color: var(--white-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-h1 {
-  z-index: 2;
-}
-.thanks {
-  margin-top: 10px;
-  z-index: 2;
-}
-#version {
-  margin-left: 15px;
-  color: var(--version-color);
-  font-weight: 500;
-}
-#playingSong {
-  position: absolute;
-  top: 150px;
-  padding-left: 2vw;
-  font-size: 36px;
-  z-index: 3;
-}
-.video {
-  display: flex;
-  justify-content: left;
-  z-index: 2;
-}
-#myVideo {
-  margin-top: 30px;
-  max-width: calc(99vw - 50px);
-  max-height: calc(100vh - 150px);
-  border-radius: 1%;
-  outline: var(--border-color);
-}
-#container {
-  left: 0px;
-  top: -100px;
-  height: calc(100vh + 100px);
-  overflow: hidden;
-  position: relative;
+  background-color: var(--dark-gray);
 }
 
-#animate {
-  margin: 0 auto;
-  width: 20px;
-  overflow: visible;
-  position: relative;
-}
-
-#all {
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-}
-#myAudio {
-  margin-top: 150px;
-}
-.header {
+.navBar {
+  background-color: var(--gray);
+  border-radius: 10px;
+  display: absolute;
+  margin: 20px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  z-index: 2;
-  max-width: 80vw;
 }
-#myButton {
-  background-color: var(--accent-color);
-  color: var(--white-color);
+
+.headerText {
+  margin-left: 40px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.version {
+  font-weight: 400;
+}
+
+.audioControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navButton {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: var(--light-gray);
+}
+
+.resumeButton {
   width: 150px;
-  height: 50px;
-  display: grid;
-  justify-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
   cursor: pointer;
-  margin-left: 50px;
+}
+
+.resumeButton:hover,
+.muteButton:hover {
+  background-color: var(--purple);
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.navIcon {
+  margin-right: 10px;
+}
+
+.volumeSlider {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  border-radius: 10px;
-}
-#myButton:hover {
-  background-color: var(--white-color);
-  color: var(--accent-color);
-  transition: 0.3s;
-}
-
-#patreon {
-  color: var(--accent-color);
+  justify-content: center;
+  width: 250px;
+  margin-left: 40px;
+  margin-right: 40px;
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 1200px) {
-  #playingSong {
-    font-size: 24px;
+#volumeSlider {
+  accent-color: var(--pink);
+  cursor: ew-resize;
+}
+
+.volumeText {
+  margin-bottom: 5px;
+}
+
+.muteButton {
+  width: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.fa-volume-xmark {
+  color: var(--pink);
+}
+
+.feedbackButton {
+  margin-right: 40px;
+  background-color: var(--orange);
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.feedbackClick {
+  color: var(--white);
+  font-weight: 400;
+}
+
+section.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  height: auto;
+  vertical-align: middle;
+  max-width: 90vw;
+  max-height: calc(90vh - 120px);
+  border-radius: 15px;
+}
+.text-content {
+  background-color: var(--gray);
+  padding: 20px;
+  max-width: 90vw;
+  position: absolute;
+  bottom: 0;
+  border-radius: 15px 15px 0px 0px;
+  border: solid 2px var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  color: white;
+  font-family: 'Nobile', sans-serif;
+  font-size: 2vw;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.sideAD {
+  width: 300px;
+  height: 600px;
+  background-color: var(--purple);
+  color: var(--white);
+  margin: 0px 10px 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.bottomAD {
+  display: grid;
+  margin-top: 10px;
+  place-items: center;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 700;
+  background-color: var(--purple);
+  width: 728px;
+  color: var(--white);
+  height: 90px;
+}
+
+@media only screen and (max-width: 2570px) {
+  .sideAD {
+    display: none;
   }
 }
-@media only screen and (max-width: 655px) {
-  #playingSong {
-    margin-top: 14px;
-    font-size: 18px;
+
+@media only screen and (max-width: 1105px) {
+  .headerText {
+    margin-top: 20px;
+  }
+  .resumeButton {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .volumeSlider {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .muteButton {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .feedbackButton {
+    margin-bottom: 20px;
   }
 }
-@media only screen and (max-width: 575px) {
-  #playingSong {
-    font-size: 12px;
-    margin-top: 14px;
+
+@media only screen and (max-width: 930px) {
+  .headerText {
+    margin-left: 0px;
   }
-}
-@media only screen and (max-width: 500px) {
-  #playingSong {
-    margin-top: 80px;
-  }
-  .header {
-    display: flex;
+  .navBar {
     flex-direction: column;
-  }
-  .text {
-    display: flex;
-    flex-direction: column;
+    height: auto;
     justify-content: center;
     align-items: center;
   }
-  #myButton {
+  .audioControls {
     margin-top: 20px;
-    margin-left: 0;
   }
-  #version {
+  .feedbackButton {
+    margin-top: 20px;
+    margin-right: 0px;
+  }
+  .bottomAD {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .audioControls {
+    flex-direction: column;
+  }
+  .volumeSlider {
     margin-top: 10px;
-    margin-left: 0;
   }
-  @media only screen and (max-width: 408px) {
-    #playingSong {
-      margin-top: 90px;
-      font-size: 10px;
-    }
+  .muteButton {
+    margin-top: 10px;
   }
 }

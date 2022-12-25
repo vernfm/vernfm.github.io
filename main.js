@@ -1,17 +1,36 @@
-// ---------------------- Audio Button -------------------------- \\
+// ---------------------- Resume button -------------------------- \\
 var pause = false;
 
 document.getElementById('myButton').addEventListener('click', function () {
   if (pause == true) {
     document.getElementById('myVideo').pause();
     document.getElementById('myAudio').pause();
-    document.getElementById('myButton').innerHTML = 'Play Music';
+    document.getElementById('myButton').innerHTML =
+      '<i class="fa-solid fa-play navIcon"></i> Resume';
     pause = false;
   } else {
     document.getElementById('myVideo').play();
     document.getElementById('myAudio').play();
-    document.getElementById('myButton').innerHTML = 'Pause Music';
+    document.getElementById('myButton').innerHTML =
+      '<i class="fa-solid fa-pause navIcon"></i> Pause';
     pause = true;
+  }
+});
+
+// ---------------------- Mute button -------------------------- \\
+var muted = false;
+
+document.getElementById('muteButton').addEventListener('click', function () {
+  if (muted == false) {
+    document.getElementById('myAudio').muted = true;
+    document.getElementById('muteButton').innerHTML =
+      '<i class="fa-solid fa-volume-xmark"></i>';
+    muted = true;
+  } else {
+    document.getElementById('myAudio').muted = false;
+    document.getElementById('muteButton').innerHTML =
+      '<i class="fa-solid fa-volume-high"></i>';
+    muted = false;
   }
 });
 
@@ -92,7 +111,7 @@ var currentSong = [
 
 var song = Math.floor(Math.random() * currentSong.length);
 
-playing.innerHTML = currentSong[song];
+playing.innerHTML = 'Current song: ' + currentSong[song];
 console.log('./media/songs/' + currentSong[song] + '.wav');
 
 // Get the audio element
@@ -105,11 +124,16 @@ player.src = './media/songs/' + currentSong[song] + '.wav';
 // Set the current time to start playing at a certain part
 player.currentTime = local;
 
-// Set the volume to 50%
-player.volume = 0.5;
+// ---------------------- Volume slider -------------------------- \\
+var volumeSlider = document.getElementById('volumeSlider');
 
-// Play the audio
-player.play();
+volumeSlider.addEventListener('input', function () {
+  // Get the value of the volume slider
+  const range = volumeSlider.value;
+  // Set the volume to the value of the range.
+  player.volume = range * 0.01;
+  console.log(range);
+});
 
 // Set an interval to increment the current time by 1 second every 1000 milliseconds (1 second)
 var interval = setInterval(function () {
@@ -126,134 +150,3 @@ var interval = setInterval(function () {
     song = Math.floor(Math.random() * currentSong.length);
   }
 }, 1000);
-
-// ---------------------- Emojis -------------------------- \\
-
-var container = document.getElementById('animate');
-var emoji = [
-  '🌽',
-  '🍇',
-  '🍌',
-  '🍒',
-  '🍕',
-  '🍷',
-  '🍭',
-  '💖',
-  '💩',
-  '🐷',
-  '🐸',
-  '🐳',
-  '🎃',
-  '🎾',
-  '🌈',
-  '🍦',
-  '💁',
-  '🔥',
-  '😁',
-  '😱',
-  '🌴',
-  '👏',
-  '💃',
-];
-var circles = [];
-
-for (var i = 0; i < 15; i++) {
-  addCircle(
-    i * 500,
-    [10 + 0, 300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 + 0, -300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 - 200, -300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 + 200, 300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 - 400, -300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 + 400, 300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 - 600, -300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-  addCircle(
-    i * 500,
-    [10 + 600, 300],
-    emoji[Math.floor(Math.random() * emoji.length)]
-  );
-}
-
-function addCircle(delay, range, color) {
-  setTimeout(function () {
-    var c = new Circle(
-      range[0] + Math.random() * range[1],
-      80 + Math.random() * 4,
-      color,
-      {
-        x: -0.15 + Math.random() * 0.3,
-        y: 1 + Math.random() * 1,
-      },
-      range
-    );
-    circles.push(c);
-  }, delay);
-}
-
-function Circle(x, y, c, v, range) {
-  var _this = this;
-  this.x = x;
-  this.y = y;
-  this.color = c;
-  this.v = v;
-  this.range = range;
-  this.element = document.createElement('span');
-  /*this.element.style.display = 'block';*/
-  this.element.style.opacity = 0;
-  this.element.style.position = 'absolute';
-  this.element.style.fontSize = '26px';
-  this.element.style.color = 'hsl(' + ((Math.random() * 360) | 0) + ',80%,50%)';
-  this.element.innerHTML = c;
-  container.appendChild(this.element);
-
-  this.update = function () {
-    if (_this.y > 800) {
-      _this.y = 80 + Math.random() * 4;
-      _this.x = _this.range[0] + Math.random() * _this.range[1];
-    }
-    _this.y += _this.v.y;
-    _this.x += _this.v.x;
-    this.element.style.opacity = 1;
-    this.element.style.transform =
-      'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-    this.element.style.webkitTransform =
-      'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-    this.element.style.mozTransform =
-      'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-  };
-}
-
-function animate() {
-  for (var i in circles) {
-    circles[i].update();
-  }
-  requestAnimationFrame(animate);
-}
-
-animate();
