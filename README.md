@@ -2,13 +2,14 @@
 
 VernFM website
 
-link: vernfm.github.io
+link: vernfm.com
 patreon link: patreon.com/vernfm
 
 ## Technologies
 
 - HTML
 - CSS
-- JS
+- JavaScript
 - Git & Github pages
-- patreon
+- Patreon
+- Robots.txt
