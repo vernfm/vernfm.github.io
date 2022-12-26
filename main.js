@@ -32,6 +32,7 @@ document.getElementById('muteButton').addEventListener('click', function () {
       '<i class="fa-solid fa-volume-high"></i>';
     muted = false;
   }
+  console.log('Muted: ' + muted);
 });
 
 // ---------------------- Audio -------------------------- \\
