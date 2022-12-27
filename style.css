@@ -22,6 +22,8 @@ body {
   background-color: var(--dark-gray);
 }
 
+/* --------------- Radio Index.html --------------------*/
+
 .navBar {
   background-color: var(--gray);
   border-radius: 10px;
@@ -44,7 +46,7 @@ body {
   text-align: center;
 }
 
-h1 {
+#navName {
   font-weight: 600;
 }
 
@@ -205,6 +207,8 @@ main {
   height: 90px;
 }
 
+/* --------------- Radio Index.html Media --------------------*/
+
 @media only screen and (max-width: 2570px) {
   .sideAD {
     display: none;
@@ -278,4 +282,35 @@ main {
   .bottomAD {
     display: none;
   }
+}
+
+/* --------------- 404.html --------------------*/
+
+.Fourpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: var(--white);
+}
+
+.Fourh1 {
+  margin-bottom: 20px;
+  font-size: 82px;
+}
+
+.Fourh2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.Fourimage {
+  max-width: 75vw;
+}
+
+.Fourbtn {
+  margin-top: 20px;
+  color: var(--white);
 }
