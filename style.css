@@ -212,9 +212,6 @@ main {
 }
 
 @media only screen and (max-width: 1105px) {
-  .headerText {
-    margin-top: 20px;
-  }
   .resumeButton {
     margin-left: 10px;
     margin-right: 10px;
@@ -227,14 +224,12 @@ main {
     margin-left: 10px;
     margin-right: 10px;
   }
-  .feedbackButton {
-    margin-bottom: 20px;
-  }
 }
 
 @media only screen and (max-width: 930px) {
   .headerText {
     margin-left: 0px;
+    margin-top: 20px;
   }
   .navBar {
     flex-direction: column;
@@ -247,6 +242,7 @@ main {
   }
   .feedbackButton {
     margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 0px;
   }
   .bottomAD {
@@ -263,5 +259,23 @@ main {
   }
   .muteButton {
     margin-top: 10px;
+  }
+}
+
+@media only screen and (max-height: 715px) {
+  .bottomAD {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 1205px) and (min-width: 1900px) {
+  .bottomAD {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 800px) and (max-width: 1280px) {
+  .bottomAD {
+    display: none;
   }
 }

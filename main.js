@@ -32,87 +32,90 @@ document.getElementById('muteButton').addEventListener('click', function () {
       '<i class="fa-solid fa-volume-high"></i>';
     muted = false;
   }
+  console.log('Muted: ' + muted);
 });
 
 // ---------------------- Audio -------------------------- \\
 var playing = document.getElementById('playingSong');
 var currentSong = [
   // Album 1
-  'Song1Album1 (Hymn of love)',
-  'Song2Album1 (Low warm-up)',
-  'Song3Album1 (Soothing game)',
-  'Song4Album1 (Chill out)',
-  'Song5Album1 (Peaceful touch)',
-  'Song6Album1 (Not enough heart)',
-  'Song7Album1 (New light)',
-  'Song8Album1 (A time of spirit)',
-  'Song9Album1 (First ride)',
-  'Song10Album1 (Calm night)',
-  'Song11Album1 (Lounge thought)',
-  'Song12Album1 (Feel young)',
-  'Song13Album1 (Late thought)',
-  'Song14Album1 (Calming end)',
-  'Song15Album1 (Melody of behavior)',
-  'Song16Album1 (Another year)',
-  'Song17Album1 (A million hearts)',
-  'Song18Album1 (Lovely blues)',
-  'Song19Album1 (Taste forever)',
-  'Song20Album1 (Smiles of dreams)',
-  'Song21Album1 (Wonders of my moments)',
-  'Song22Album1 (Lovely rhapsody)',
+  'Hymn of love, Album 1',
+  'Low warm-up, Album 1',
+  'Soothing game, Album 1',
+  'Chill out, Album 1',
+  'Peaceful touch, Album 1',
+  'Not enough heart, Album 1',
+  'New light, Album 1',
+  'A time of spirit, Album 1',
+  'First ride, Album 1',
+  'Calm night, Album 1',
+  'Lounge thought, Album 1',
+  'Feel young, Album 1',
+  'Late thought, Album 1',
+  'Calming end, Album 1',
+  'Melody of behavior, Album 1',
+  'Another year, Album 1',
+  'A million hearts, Album 1',
+  'Lovely blues, Album 1',
+  'Taste forever, Album 1',
+  'Smiles of dreams, Album 1',
+  'Wonders of my moments, Album 1',
+  'Lovely rhapsody, Album 1',
   // Album 2
-  'Song1Album2 (Lovers of yesterday)',
-  'Song2Album2 (Always fair)',
-  'Song3Album2 (Sunny cocktail)',
-  'Song4Album2 (Glowing happiness)',
-  'Song5Album2 (Mystery of romance)',
-  'Song6Album2 (Smooth moments)',
-  'Song7Album2 (Equal smiles)',
-  'Song8Album2 (Without you)',
-  'Song9Album2 (Someone like you)',
-  'OLDSong10Album2 (hehe)',
-  'Song10Album2 (Again for you)',
-  'Song11Album2 (Hold me tight tonight)',
-  'Song12Album2 (Your heart)',
-  'Song13Album2 (Wait for your best friend)',
-  'Song14Album2 (Lovely hearts)',
-  'Song15Album2 (Your home)',
-  'Song16Album2 (The way you swing)',
-  'Song17Album2 (Drink of the night)',
-  'Song18Album2 (You are beautiful)',
-  'Song19Album2 (Our last autumn)',
-  'Song20Album2 (Me and you in the sunset)',
+  'Lovers of yesterday, Album 2',
+  'Always fair, Album 2',
+  'Sunny cocktail, Album 2',
+  'Glowing happiness, Album 2',
+  'Mystery of romance, Album 2',
+  'Smooth moments, Album 2',
+  'Equal smiles, Album 2',
+  'Without you, Album 2',
+  'Someone like you, Album 2',
+  'PLACEHOLDER, Album 2',
+  'Again for you, Album 2',
+  'Hold me tight tonight, Album 2',
+  'Your heart, Album 2',
+  'Wait for your best friend, Album 2',
+  'Lovely hearts, Album 2',
+  'Your home, Album 2',
+  'The way you swing, Album 2',
+  'Drink of the night, Album 2',
+  'You are beautiful, Album 2',
+  'Our last autumn, Album 2',
+  'Me and you in the sunset, Album 2',
   // Album 3
-  'Song1Album3 (Your thought)',
-  'Song2Album3 (Another paradise)',
-  'Song3Album3 (Too many years)',
-  'Song4Album3 (Endless adventure)',
-  'Song5Album3 (Fantasy explosions)',
-  'Song6Album3 (Infinite era)',
-  'Song7Album3 (We shall love)',
-  'Song8Album3 (Chill ride)',
-  'Song9Album3 (Like a guitar)',
-  'Song10Album3 (This summer)',
-  'Song11Album3 (Great hearts)',
-  'Song12Album3 (Stairway to your heart)',
-  'Song13Album3 (Climate change)',
-  'Song14Album3 (Sounds of my fire)',
-  'Song15Album3 (Chained games)',
-  'Song16Album3 (Another day of the good life)',
-  'Song17Album3 (The daylight)',
-  'Song18Album3 (Losing her ways)',
-  'Song19Album3 (Winter warmth)',
-  'Song20Album3 (Sweet night of mine)',
+  'Your thought, Album 3',
+  'Another paradise, Album 3',
+  'Too many years, Album 3',
+  'Endless adventure, Album 3',
+  'Fantasy explosions, Album 3',
+  'Infinite era, Album 3',
+  'We shall love, Album 3',
+  'Chill ride, Album 3',
+  'Like a guitar, Album 3',
+  'This summer, Album 3',
+  'Great hearts, Album 3',
+  'Stairway to your heart, Album 3',
+  'Climate change, Album 3',
+  'Sounds of my fire, Album 3',
+  'Chained games, Album 3',
+  'Another day of the good life, Album 3',
+  'The daylight, Album 3',
+  'Losing her ways, Album 3',
+  'Winter warmth, Album 3',
+  'Sweet night of mine, Album 3',
   // Kivisar
-  'Miracles (instrumental)',
-  'Miracles (less voice)',
-  'Miracles (Original)',
+  'Miracles (instrumental), Album 4',
+  'Miracles (less voice), Album 4',
+  'Miracles (Original), Album 4',
 ];
 
 var song = Math.floor(Math.random() * currentSong.length);
 
-playing.innerHTML = 'Current song: ' + currentSong[song];
-console.log('./media/songs/' + currentSong[song] + '.wav');
+playing.innerHTML = 'Song: ' + currentSong[song];
+console.log(
+  'The first song is: ' + './media/songs/' + currentSong[song] + '.wav'
+);
 
 // Get the audio element
 var player = document.getElementById('myAudio');
@@ -132,21 +135,27 @@ volumeSlider.addEventListener('input', function () {
   const range = volumeSlider.value;
   // Set the volume to the value of the range.
   player.volume = range * 0.01;
-  console.log(range);
+  console.log('The input range is now: ' + range);
 });
 
-// Set an interval to increment the current time by 1 second every 1000 milliseconds (1 second)
-var interval = setInterval(function () {
-  // Increment the current time by 1 second
-  local += 1;
-  player.currentTime = local;
-  // If the current time is greater than or equal to the duration of the audio, stop the interval and change the src to the next song
-  if (player.currentTime >= player.duration) {
-    local = 0;
-    clearInterval(interval);
-    player.src = './media/songs/' + currentSong[song] + '.wav';
-    playing = currentSong[song];
-    player.play();
-    song = Math.floor(Math.random() * currentSong.length);
+// ---------------------- Play next song -------------------------- \\
+
+// Set the current song index to 0
+var currentSongIndex = 0;
+
+// Set up the ended event listener for the audio element
+player.addEventListener('ended', function () {
+  // Increment the current song index
+  currentSongIndex++;
+
+  // If the current song index is greater than the number of songs, reset it to 0
+  if (currentSongIndex >= currentSong.length) {
+    currentSongIndex = 0;
   }
-}, 1000);
+
+  player.src = './media/songs/' + currentSong[song] + '.wav';
+  playing = 'Song: ' + currentSong[song];
+  player.play();
+  song = Math.floor(Math.random() * currentSong.length);
+  console.log('New song: ' + './media/songs/' + currentSong[song] + '.wav');
+});
