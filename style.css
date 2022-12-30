@@ -257,12 +257,29 @@ main {
 @media only screen and (max-width: 550px) {
   .audioControls {
     flex-direction: column;
+    display: grid;
+    grid-template:
+      'resumeButton muteButton ' 'volumeSlider volumeSlider'
+      'feedbackButton feedbackButton';
   }
   .volumeSlider {
     margin-top: 10px;
   }
   .muteButton {
-    margin-top: 10px;
+    margin-left: -100px;
+    width: 90px;
+  }
+  .audioControls :nth-child(1) {
+    order: 1;
+  }
+  .audioControls :nth-child(2) {
+    order: 3;
+  }
+  .audioControls :nth-child(3) {
+    order: 2;
+  }
+  .audioControls :nth-child(4) {
+    order: 4;
   }
 }
 
