@@ -281,10 +281,6 @@ main {
   .audioControls :nth-child(4) {
     order: 4;
   }
-  .resumeButton {
-    display: flex;
-    flex-direction: row-reverse;
-  }
 }
 
 @media only screen and (max-height: 715px) {

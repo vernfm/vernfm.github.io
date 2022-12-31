@@ -6,13 +6,13 @@ document.getElementById('myButton').addEventListener('click', function () {
     document.getElementById('myVideo').pause();
     document.getElementById('myAudio').pause();
     document.getElementById('myButton').innerHTML =
-      '<i class="fa-solid fa-play navIcon"></i> Resume';
+      '<i class="fa-solid fa-play navIcon"></i> <span>Resume</span>';
     pause = false;
   } else {
     document.getElementById('myVideo').play();
     document.getElementById('myAudio').play();
     document.getElementById('myButton').innerHTML =
-      '<i class="fa-solid fa-pause navIcon"></i> Pause';
+      '<i class="fa-solid fa-pause navIcon"></i> <span>Pause</span>';
     pause = true;
   }
 });
