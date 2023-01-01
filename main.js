@@ -6,14 +6,16 @@ document.getElementById('myButton').addEventListener('click', function () {
     document.getElementById('myVideo').pause();
     document.getElementById('myAudio').pause();
     document.getElementById('myButton').innerHTML =
-      '<i class="fa-solid fa-play navIcon"></i> Resume';
+      '<i class="fa-solid fa-play navIcon"></i> <span>Resume</span>';
     pause = false;
+    console.log('Paused: ' + pause);
   } else {
     document.getElementById('myVideo').play();
     document.getElementById('myAudio').play();
     document.getElementById('myButton').innerHTML =
-      '<i class="fa-solid fa-pause navIcon"></i> Pause';
+      '<i class="fa-solid fa-pause navIcon"></i> <span>Pause</span>';
     pause = true;
+    console.log('Paused: ' + pause);
   }
 });
 
@@ -36,7 +38,6 @@ document.getElementById('muteButton').addEventListener('click', function () {
 });
 
 // ---------------------- Audio -------------------------- \\
-var playing = document.getElementById('playingSong');
 var currentSong = [
   // Album 1
   'Hymn of love, Album 1',
@@ -110,52 +111,41 @@ var currentSong = [
   'Miracles (Original), Album 4',
 ];
 
+// Get the audio element
+var playing = document.getElementById('playingSong');
+var player = document.getElementById('myAudio');
 var song = Math.floor(Math.random() * currentSong.length);
 
 playing.innerHTML = 'Song: ' + currentSong[song];
+player.src = './media/songs/' + currentSong[song] + '.wav';
+// Set the current time to start playing at a certain part
+player.currentTime = 0;
+player.play();
+
 console.log(
   'The first song is: ' + './media/songs/' + currentSong[song] + '.wav'
 );
 
-// Get the audio element
-var player = document.getElementById('myAudio');
-
-var local = 0;
-
-player.src = './media/songs/' + currentSong[song] + '.wav';
-
-// Set the current time to start playing at a certain part
-player.currentTime = local;
-
 // ---------------------- Volume slider -------------------------- \\
 var volumeSlider = document.getElementById('volumeSlider');
+var range = volumeSlider.value;
+console.log('The music volume is at: ' + range + '%.');
 
 volumeSlider.addEventListener('input', function () {
   // Get the value of the volume slider
-  const range = volumeSlider.value;
+  range = volumeSlider.value;
   // Set the volume to the value of the range.
   player.volume = range * 0.01;
-  console.log('The input range is now: ' + range);
+  console.log('The music volume is at: ' + range + '%.');
 });
 
 // ---------------------- Play next song -------------------------- \\
 
-// Set the current song index to 0
-var currentSongIndex = 0;
-
-// Set up the ended event listener for the audio element
+// Ended event listener for the audio element
 player.addEventListener('ended', function () {
-  // Increment the current song index
-  currentSongIndex++;
-
-  // If the current song index is greater than the number of songs, reset it to 0
-  if (currentSongIndex >= currentSong.length) {
-    currentSongIndex = 0;
-  }
-
-  player.src = './media/songs/' + currentSong[song] + '.wav';
-  playing = 'Song: ' + currentSong[song];
-  player.play();
   song = Math.floor(Math.random() * currentSong.length);
+  playing.innerHTML = 'Song: ' + currentSong[song];
+  player.src = './media/songs/' + currentSong[song] + '.wav';
+  player.play();
   console.log('New song: ' + './media/songs/' + currentSong[song] + '.wav');
 });
