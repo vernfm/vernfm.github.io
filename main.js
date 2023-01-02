@@ -1,43 +1,46 @@
-// ---------------------- Resume button -------------------------- \\
-var pause = false;
+let haveClicked = false;
 
-document.getElementById('myButton').addEventListener('click', function () {
-  if (pause == true) {
-    document.getElementById('myVideo').pause();
-    document.getElementById('myAudio').pause();
-    document.getElementById('myButton').innerHTML =
+// --------------- Resume button --------------- \\
+var paused = true;
+
+document.getElementById('resumeButton').addEventListener('click', function () {
+  haveClicked = true;
+
+  if (paused == false) {
+    document.getElementById('animatedVideo').pause();
+    document.getElementById('music').pause();
+    document.getElementById('resumeButton').innerHTML =
       '<i class="fa-solid fa-play navIcon"></i> <span>Resume</span>';
-    pause = false;
-    console.log('Paused: ' + pause);
+    paused = true;
   } else {
-    document.getElementById('myVideo').play();
-    document.getElementById('myAudio').play();
-    document.getElementById('myButton').innerHTML =
+    document.getElementById('animatedVideo').play();
+    document.getElementById('music').play();
+    document.getElementById('resumeButton').innerHTML =
       '<i class="fa-solid fa-pause navIcon"></i> <span>Pause</span>';
-    pause = true;
-    console.log('Paused: ' + pause);
+    paused = false;
   }
+  console.log('Video & Music paused: ' + paused);
 });
 
-// ---------------------- Mute button -------------------------- \\
+// --------------- Mute button --------------- \\
 var muted = false;
 
 document.getElementById('muteButton').addEventListener('click', function () {
   if (muted == false) {
-    document.getElementById('myAudio').muted = true;
+    document.getElementById('music').muted = true;
     document.getElementById('muteButton').innerHTML =
       '<i class="fa-solid fa-volume-xmark"></i>';
     muted = true;
   } else {
-    document.getElementById('myAudio').muted = false;
+    document.getElementById('music').muted = false;
     document.getElementById('muteButton').innerHTML =
       '<i class="fa-solid fa-volume-high"></i>';
     muted = false;
   }
-  console.log('Muted: ' + muted);
+  console.log('Music muted: ' + muted);
 });
 
-// ---------------------- Audio -------------------------- \\
+// --------------- Available songs --------------- \\
 var currentSong = [
   // Album 1
   'Hymn of love, Album 1',
@@ -111,37 +114,58 @@ var currentSong = [
   'Miracles (Original), Album 4',
 ];
 
+// --------------- Initial song setup --------------- \\
 // Get the audio element
 var playing = document.getElementById('playingSong');
-var player = document.getElementById('myAudio');
+var player = document.getElementById('music');
 var song = Math.floor(Math.random() * currentSong.length);
 
 playing.innerHTML = 'Song: ' + currentSong[song];
 player.src = './media/songs/' + currentSong[song] + '.wav';
 // Set the current time to start playing at a certain part
 player.currentTime = 0;
-player.play();
-
-console.log(
-  'The first song is: ' + './media/songs/' + currentSong[song] + '.wav'
-);
 
 // ---------------------- Volume slider -------------------------- \\
 var volumeSlider = document.getElementById('volumeSlider');
 var range = volumeSlider.value;
-console.log('The music volume is at: ' + range + '%.');
 
 volumeSlider.addEventListener('input', function () {
   // Get the value of the volume slider
   range = volumeSlider.value;
   // Set the volume to the value of the range.
   player.volume = range * 0.01;
-  console.log('The music volume is at: ' + range + '%.');
+  console.log('The music volume is now at: ' + range + '%.');
+});
+
+// ---------------------- Debug log -------------------------- \\
+console.log('%c VernFM Debug log', ' color: #4462ec');
+console.log('%c ---------------', ' color: #f09755');
+console.log('%c Video & Music paused: ', ' color: #f09755', paused);
+console.log('%c Music muted: ', ' color: #f09755', muted);
+console.log(
+  '%c The first song is: ',
+  'background: #222; color: #f09755',
+  currentSong[song]
+);
+console.log('%c The music volume started at: ', ' color: #f09755', range, '%.');
+console.log(
+  '%c If this info is not accurate or you need support email me at Pontus@VernFM.com',
+  ' color: #ff6e91'
+);
+console.log('%c ---------------', ' color: #f09755');
+
+// Set up an event listener that listens for changes to the value of myVariable
+document.addEventListener('myVariableChange', function (event) {
+  haveClicked = true;
+
+  // Requirement to not automatically play sometimes when the website loads.
+  if (haveClicked == true) {
+    // Start playing the song initialized in "Initial song setup".
+    player.play();
+  }
 });
 
 // ---------------------- Play next song -------------------------- \\
-
-// Ended event listener for the audio element
 player.addEventListener('ended', function () {
   song = Math.floor(Math.random() * currentSong.length);
   playing.innerHTML = 'Song: ' + currentSong[song];
