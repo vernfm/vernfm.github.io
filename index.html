@@ -46,10 +46,10 @@
     <div class="navBar">
       <div class="headerText">
         <h1 id="navName">VernFM</h1>
-        <span class="version">Alpha version: 0.1.2</span>
+        <span class="version">Alpha version: 0.1.4</span>
       </div>
       <div class="audioControls">
-        <div id="myButton" class="navButton resumeButton">
+        <div id="resumeButton" class="navButton resumeButton">
           <i class="fa-solid fa-play navIcon"></i>
           <span>Resume</span>
         </div>
@@ -71,7 +71,7 @@
     <section class="main">
       <div class="video">
         <div class="sideAD">Do you want to advertise here?</div>
-        <video id="myVideo" autoplay loop>
+        <video id="animatedVideo" autoplay loop>
           <source src="./media/video.mp4" type="audio/mp4" />
           Your browser does not support the audio element.
         </video>
@@ -81,13 +81,25 @@
         </div>
         <div class="sideAD">Do you want to advertise here?</div>
       </div>
-
+      <span id="copyright">
+        &copy; 2023 All rights reserved | This website is made with
+        <i class="fa-solid fa-heart"></i> by
+        <!-- Uncomment this when personal portfolio is complete
+          <a
+          href="https://pontushenriksson.github.io"
+          target="_blank"
+          id="copyrightLink"
+          >Pontus Henriksson</a
+        >
+        -->
+        <a id="copyrightLink">Pontus Henriksson</a>
+      </span>
       <div class="bottomAD">Do you want to advertise here?</div>
 
       <audio
-        src="./media/songs/Song1Album1 (Hymn of love).wav"
-        type="audio/mp3"
-        id="myAudio"
+        src="./media/songs/Endless adventure, Album 3.wav"
+        type="audio/vaw"
+        id="music"
       ></audio>
     </section>
     <script src="main.js"></script>
