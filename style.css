@@ -153,7 +153,7 @@ video {
   height: auto;
   vertical-align: middle;
   max-width: 90vw;
-  max-height: calc(90vh - 120px);
+  max-height: calc(90vh - 160px);
   border-radius: 15px;
 }
 .text-content {
@@ -205,6 +205,17 @@ main {
   width: 728px;
   color: var(--white);
   height: 90px;
+}
+
+#copyright {
+  margin: 10px;
+  color: var(--pink);
+  text-align: center;
+}
+
+#copyrightLink {
+  color: var(--purple);
+  font-weight: 700;
 }
 
 /* --------------- Radio Index.html Media --------------------*/

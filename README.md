@@ -11,6 +11,7 @@ patreon link: patreon.com/vernfm
 - CSS
 - JavaScript
 - Git & Github pages
+- SSH
 - Patreon
 - Robots.txt
 
