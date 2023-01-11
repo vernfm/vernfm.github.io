@@ -62,6 +62,14 @@ body {
   font-weight: 600;
 }
 
+.rightButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
 .navButton {
   height: 60px;
   display: flex;
@@ -118,6 +126,22 @@ body {
 
 .fa-volume-xmark {
   color: var(--pink);
+}
+
+.artistsClick {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: var(--white);
+  font-weight: 600;
+  background-color: var(--purple);
+}
+
+.artistsButton {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
 }
 
 .feedbackButton {
@@ -211,6 +235,7 @@ main {
   margin: 10px;
   color: var(--pink);
   text-align: center;
+  max-width: 90vw;
 }
 
 #copyrightLink {
@@ -226,7 +251,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 1105px) {
+@media only screen and (max-width: 1330px) {
   .resumeButton {
     margin-left: 10px;
     margin-right: 10px;
@@ -239,9 +264,18 @@ main {
     margin-left: 10px;
     margin-right: 10px;
   }
+  .rightButtons {
+    gap: 20px;
+  }
+  .artistsClickText {
+    display: none;
+  }
+  .artistsClick .navIcon {
+    margin-right: 0;
+  }
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 1100px) {
   .headerText {
     margin-left: 0px;
     margin-top: 20px;
@@ -260,8 +294,18 @@ main {
     margin-bottom: 20px;
     margin-right: 0px;
   }
+  .artistsClick .navIcon {
+    margin-right: 10px;
+  }
   .bottomAD {
     display: none;
+  }
+  .artistsClickText {
+    display: block;
+  }
+  .rightButtons {
+    flex-direction: row;
+    gap: 40px;
   }
 }
 
@@ -271,7 +315,7 @@ main {
     display: grid;
     grid-template:
       'resumeButton muteButton ' 'volumeSlider volumeSlider'
-      'feedbackButton feedbackButton';
+      'artistsButton artistsButton' 'feedbackButton feedbackButton';
   }
   .volumeSlider {
     margin-top: 10px;
@@ -291,6 +335,18 @@ main {
   }
   .audioControls :nth-child(4) {
     order: 4;
+  }
+  .rightButtons {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feedbackButton {
+    margin-top: 0;
+  }
+  .feedbackButton,
+  .artistsClick {
+    width: 250px;
   }
 }
 

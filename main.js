@@ -139,6 +139,7 @@ volumeSlider.addEventListener('input', function () {
 
 // ---------------------- Debug log -------------------------- \\
 console.log('%c VernFM Debug log', ' color: #4462ec');
+console.log('%c Alpha version: 0.1.5', ' color: #4462ec');
 console.log('%c ---------------', ' color: #f09755');
 console.log('%c Video & Music paused: ', ' color: #f09755', paused);
 console.log('%c Music muted: ', ' color: #f09755', muted);
